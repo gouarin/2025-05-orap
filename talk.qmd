@@ -1,0 +1,262 @@
+---
+title:  AI for software development
+author:
+    - Loïc Gouarin
+format:
+  revealjs:
+    css: css/light.css
+    slide-number: true
+resources:
+  - videos/**
+highlight-style: github
+footer: Forum ORAP - <img src="figures/by-sa.png" class="cc-img"/> - 20 May 2025
+---
+
+## {.no-title .center}
+```{=html}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+```
+
+:::{.row}
+::::{.col-4 .text-center}
+<img class="m-0" src="figures/loic_small.png">
+::::
+::::{.col .align-self-center .lh-lg}
+- Research engineer in scientific computing at CNRS
+- Co-leader of the HPC@Maths team
+- Member of the groupe Calcul board
+- Developer of open-source software
+::::
+:::
+
+:::{.row}
+::::{.col-4}
+::::
+::::{.col}
+:::::{.row .mt-5 .text-center}
+::::::{.col .align-self-center}
+<img width="50%" src="figures/samurai.png">
+::::::
+::::::{.col .align-self-center}
+<img width="70%" src="figures/pylbm_logo.png">
+::::::
+::::::{.col .align-self-center}
+ <img width="70%" src="figures/scopi.png">
+::::::
+:::::
+::::
+:::
+
+---
+
+## Large language model (LLM) history
+
+![](figures/llm_history.svg){width=60%, fig-align="center"}
+
+## What LLM can we use ?
+
+![](figures/llm_list.svg){width=60%, fig-align="center"}
+
+## Why use AI for software development ?
+
+![](figures/llm_why.svg){width=60%, fig-align="center"}
+
+## Learderboards {.text-center}
+
+![](figures/livecodebench_explain.png){height=30%}
+
+<a href="https://arxiv.org/pdf/2403.07974" target="_blank"> LiveCodeBench: https://arxiv.org/pdf/2403.07974 </a>
+
+## Learderboards
+
+:::{.row .text-center}
+:::
+:::{.row .text-center}
+::::{.col .align-self-center}
+![](figures/livecodebench.png)
+::::
+::::{.col .align-self-center}
+![](figures/livecodebench_2.png){width=60%}
+
+::::: {.callout-note icon=false title="Other leaderboards" .fragment}
+- Code evaluation
+  - [BigCode's Models Leaderboard](https://huggingface.co/spaces/bigcode/bigcode-models-leaderboard)
+  - [BigCode's BigCodeBench](https://huggingface.co/spaces/bigcode/bigcodebench-leaderboard)
+  - [Meta's CyberSecEval](https://huggingface.co/spaces/facebook/CyberSecEval)
+- Mathematics abilities
+  - [NPHardEval](https://huggingface.co/spaces/NPHardEval/NPHardEval-leaderboard)
+:::::
+::::
+:::
+
+:::{.notes}
+Look at the article to explain the results. They seem really bad.
+:::
+
+## Learderboards {.text-center}
+
+![](figures/new_livecodebench.png)
+
+## How to use them ?
+
+:::{.lh-lg .center-page-vertically}
+- **LLM server** : vLLM, Ollama
+- **Chat** : Open WebUI, Msty
+- **IDE** : VS Code, Cursor, Windsurf
+- **VS Code plugins**: GitHub Copilot, Roo Code, Continue
+- **Tools** : LangChain, LangGraph, PydanticAI
+:::
+
+## What are the limitations of this approach ?
+
+:::{.lh-lg .center-page-vertically}
+- The model doesn't know anything about your domain.
+- Is the knowledge of your programming language is sufficient ?
+- You can only use one model at a time.
+- Interaction is mandatory: AI can't act on its own.
+:::
+
+## What do we want to achieve ?
+
+![](figures/wanted.svg){width=90%, fig-align="center"}
+
+# How enrich a generic LLM model ?
+
+## {.center .no-title .text-center}
+
+![](figures/fine-tuning.svg){width=60%}
+
+## {.center .no-title .text-center}
+
+![](figures/rag.svg){width=70%}
+
+:::{.notes}
+The problem with RAG is that you only have a chunk of the relevant data. You can take the neighbors if you have stored the data using an ID but it can still be not enough.
+CAG seems to eliminate retrieval latency or mitigate retrieval errors.
+:::
+
+## {.center .no-title .text-center}
+
+:::{.row}
+::::{.col .align-self-center .text-center}
+![](figures/tools.png){width=90%}
+::::
+::::{.col .align-self-center .text-center .lh-lg}
+- Web search (Tavily, DuckDuckGo, Brave, ...)
+- Python script execution
+- GitHub interactions
+- ...
+::::
+:::
+
+## Multimodal perception
+
+![](figures/multimodal.svg){width=70%}
+
+## Agent {.text-center}
+
+![](figures/simple-agent.svg){width=80%}
+
+## Model Context Protocol (MCP)
+
+> MCP is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools.
+
+:::{.text-center .fragment}
+![](figures/mcp_example.svg){width=80%}
+:::
+
+## 2025: the year of the agents
+
+:::{.row .align-items-center}
+::::{.col}
+- Create several AI agents that work together.
+- Each agent is specialized (web search, code analysis, unit test creation, ...).
+- Each agent can use an LLM model suitable for its purpose.
+- New members can be added to the team.
+::::
+::::{.col}
+![](figures/ai_team.jpg){width=100%}
+::::
+:::
+
+## Computational resources
+
+The key elements :
+
+:::{.lh-lg}
+- the number of parameters of the LLM model (7B, 70B, ...)
+- the precision (FP32, FP16, FP8, INT8, ...)
+- the throughput (tokens/s)
+:::
+
+:::{.text-center .fragment .mt-5}
+The commonly accepted range is **10** to **50** tokens per second per user,
+
+but this is highly dependent on usage.
+:::
+
+:::{.notes}
+https://infohub.delltechnologies.com/fr-fr/p/benchmarking-nvidia-gpu-throughput-for-llms-and-understanding-gpu-configuration-choices-in-the-ai-space/
+:::
+
+## Computational resources
+
+> **Code generation for software development teams**
+
+> **Scenario:** A development firm employs an AI-driven tool that aids developers by suggesting code blocks and facilitating debugging in real-time. This tool is versatile, supporting a variety of coding tasks—from autocomplete of code snippets to generating entire code blocks based on minimal inputs. It is also integral in real-time peer review systems, offering on-the-fly optimizations and corrections, and serves as an educational aid that dynamically generates coding examples tailored to the user's current learning topic. This multi-functional capability ensures that developers can enhance productivity and accuracy in their coding projects, making the tool essential for modern software development environments.
+
+> **Established throughput baseline: 40 tokens/second** - This higher rate is necessary to manage the heavy data processing and output demands in code generation, ensuring developers experience minimal lag time. This substantial rate accommodates the dense token requirements typical of coding environments, where both input queries and output suggestions are often complex and lengthy. Code generation processes not only necessitate parsing extensive programming syntax but also generating accurate, contextually appropriate code responses. This ensures that developers can iterate and test code rapidly without delays, significantly enhancing productivity.
+
+## Computational resources
+
+:::{.row .text-center .justify-content-md-center}
+::::{.col-6}
+![](figures/tokens_1GPU.png){width="80%"}
+::::
+::::{.col-6}
+![](figures/tokens_2GPU.png){width="80%"}
+::::
+::::{.col-6}
+![](figures/tokens_4GPU.png){width="80%"}
+::::
+:::
+
+:::{.text-center}
+[https://infohub.delltechnologies.com/fr-fr/p/benchmarking-nvidia-gpu-throughput-for-llms-and-understanding-gpu-configuration-choices-in-the-ai-space/](https://infohub.delltechnologies.com/fr-fr/p/benchmarking-nvidia-gpu-throughput-for-llms-and-understanding-gpu-configuration-choices-in-the-ai-space/)
+:::
+
+## Model limitation
+
+:::{.lh-lg .center-page-vertically}
+- The context is still too small.
+- Not all models know how to use the tools.
+- The models are trained on popular programming languages (Python, JavaScript, etc.). The quality of responses in some languages can be very bad.
+- The processing chain can become very long, considerably increasing response times.
+:::
+
+:::{.notes}
+Or les tools font que l'on ajoute de plus en plus de chose dans le contexte. Une base de code peut être beaucoup plus grande qu'un contexte.
+:::
+
+## {.center .no-title .text-center}
+
+While the arrival of AI agents opens up a wide range of possibilities in software development, it also raises many questions. Here are just a few of them
+
+### Who is the owner of the code produced by AI? {.my-5 .fragment .fade-in-then-out}
+### What impact will the use of LLMs have on the skills of junior developers? {.my-5 .fragment .fade-in-then-out}
+### What is the impact on code quality and security? {.my-5 .fragment .fade-in-then-out}
+### What is the ecological footprint of the massive use of AI in all sectors of the economy? {.my-5 .fragment .fade-in-then-out}
+
+## {.center .no-title .text-center}
+
+### Thank you {.my-5}
+
+## Credits
+
+- https://app.napkin.ai/
+- https://thenounproject.com/icon/open-source-7771120/
+- https://thenounproject.com/icon/artificial-intelligence-6262207/
+- https://thenounproject.com/icon/proprietary-software-7179209/
+- https://thenounproject.com/icon/file-server-6842823/
+- https://thenounproject.com/icon/web-search-7657599/
