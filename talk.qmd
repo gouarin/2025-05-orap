@@ -129,7 +129,7 @@ Look at the article to explain the results. They seem really bad.
 
 ## {.center .no-title .text-center}
 
-![](figures/rag.svg){width=70%}
+![](figures/RAG.svg){width=70%}
 
 :::{.notes}
 The problem with RAG is that you only have a chunk of the relevant data. You can take the neighbors if you have stored the data using an ID but it can still be not enough.
@@ -251,6 +251,11 @@ While the arrival of AI agents opens up a wide range of possibilities in softwar
 ## {.center .no-title .text-center}
 
 ### Thank you {.my-5}
+
+## {.center .no-title .text-center}
+
+[https://ia4dev-2025.sciencesconf.org/](https://ia4dev-2025.sciencesconf.org/)
+
 
 ## Credits
 
