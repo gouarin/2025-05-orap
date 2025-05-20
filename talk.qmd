@@ -72,7 +72,7 @@ Open is not really: you have an access to the code but not on the datas.
 
 ![](figures/llm_why.svg){width=60%, fig-align="center"}
 
-## Learderboards {.text-center}
+## Leaderboards {.text-center}
 
 ![](figures/livecodebench_explain.png){height=30%}
 
@@ -82,7 +82,7 @@ Open is not really: you have an access to the code but not on the datas.
 Explain what is a leaderboard: you have the inputs and the outputs and you evaluate the results to asses the performance of the model.
 :::
 
-## Learderboards
+## Leaderboards
 
 :::{.row .text-center}
 :::
@@ -108,7 +108,7 @@ Explain what is a leaderboard: you have the inputs and the outputs and you evalu
 Look at the article to explain the results. They seem really bad.
 :::
 
-## Learderboards {.text-center}
+## Leaderboards {.text-center}
 
 ![](figures/new_livecodebench.png)
 
@@ -284,12 +284,11 @@ While the arrival of AI agents opens up a wide range of possibilities in softwar
 
 ## {.center .no-title .text-center}
 
-### Thank you {.my-5}
+[https://ia4dev-2025.sciencesconf.org/](https://ia4dev-2025.sciencesconf.org/)
 
 ## {.center .no-title .text-center}
 
-[https://ia4dev-2025.sciencesconf.org/](https://ia4dev-2025.sciencesconf.org/)
-
+### Thank you {.my-5}
 
 ## Credits
 
