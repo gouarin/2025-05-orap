@@ -5,9 +5,7 @@ author:
 format:
   revealjs:
     css: css/light.css
-    slide-number: true
-resources:
-  - videos/**
+    #slide-number: true
 highlight-style: github
 footer: Forum ORAP - <img src="figures/by-sa.png" class="cc-img"/> - 20 May 2025
 ---
@@ -54,9 +52,21 @@ footer: Forum ORAP - <img src="figures/by-sa.png" class="cc-img"/> - 20 May 2025
 
 ![](figures/llm_history.svg){width=60%, fig-align="center"}
 
+:::{.notes}
+Attention is all what you need
+
+Not easy to use before ChatGPT
+
+Going really fast (this is the most important)
+:::
+
 ## What LLM can we use ?
 
 ![](figures/llm_list.svg){width=60%, fig-align="center"}
+
+:::{.notes}
+Open is not really: you have an access to the code but not on the datas.
+:::
 
 ## Why use AI for software development ?
 
@@ -67,6 +77,10 @@ footer: Forum ORAP - <img src="figures/by-sa.png" class="cc-img"/> - 20 May 2025
 ![](figures/livecodebench_explain.png){height=30%}
 
 <a href="https://arxiv.org/pdf/2403.07974" target="_blank"> LiveCodeBench: https://arxiv.org/pdf/2403.07974 </a>
+
+:::{.notes}
+Explain what is a leaderboard: you have the inputs and the outputs and you evaluate the results to asses the performance of the model.
+:::
 
 ## Learderboards
 
@@ -98,6 +112,12 @@ Look at the article to explain the results. They seem really bad.
 
 ![](figures/new_livecodebench.png)
 
+:::{.notes}
+Big improvement in just 6 months.
+
+Not a lot of open models.
+:::
+
 ## How to use them ?
 
 :::{.lh-lg .center-page-vertically}
@@ -108,7 +128,7 @@ Look at the article to explain the results. They seem really bad.
 - **Tools** : LangChain, LangGraph, PydanticAI
 :::
 
-## What are the limitations of this approach ?
+## What are the limitations ?
 
 :::{.lh-lg .center-page-vertically}
 - The model doesn't know anything about your domain.
@@ -121,17 +141,35 @@ Look at the article to explain the results. They seem really bad.
 
 ![](figures/wanted.svg){width=90%, fig-align="center"}
 
+
+:::{.notes}
+perceive
+reasoning
+act
+remember
+:::
+
 # How enrich a generic LLM model ?
 
 ## {.center .no-title .text-center}
 
 ![](figures/fine-tuning.svg){width=60%}
 
+:::{.notes}
+need a good preparation of the date: input and output creation
+
+need a lot of computational units to train the model
+
+The process must be redo for any update.
+:::
+
 ## {.center .no-title .text-center}
 
 ![](figures/RAG.svg){width=70%}
 
 :::{.notes}
+Easy to do but time consuming at each query.
+
 The problem with RAG is that you only have a chunk of the relevant data. You can take the neighbors if you have stored the data using an ID but it can still be not enough.
 CAG seems to eliminate retrieval latency or mitigate retrieval errors.
 :::
@@ -194,10 +232,6 @@ The key elements :
 The commonly accepted range is **10** to **50** tokens per second per user,
 
 but this is highly dependent on usage.
-:::
-
-:::{.notes}
-https://infohub.delltechnologies.com/fr-fr/p/benchmarking-nvidia-gpu-throughput-for-llms-and-understanding-gpu-configuration-choices-in-the-ai-space/
 :::
 
 ## Computational resources
