@@ -178,11 +178,39 @@ Loïc Gouarin
 <section id="large-language-model-llm-history" class="slide level2">
 <h2>Large language model (LLM) history</h2>
 
-<img data-src="figures/llm_history.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="figures/llm_history.svg" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>Attention is all what you need</p>
+<p>Not easy to use before ChatGPT</p>
+<p>Going really fast (this is the most important)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="what-llm-can-we-use" class="slide level2">
 <h2>What LLM can we use ?</h2>
 
-<img data-src="figures/llm_list.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="figures/llm_list.svg" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>Open is not really: you have an access to the code but not on the datas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="why-use-ai-for-software-development" class="slide level2">
 <h2>Why use AI for software development ?</h2>
 
@@ -191,6 +219,19 @@ Loïc Gouarin
 <h2>Learderboards</h2>
 <p><img data-src="figures/livecodebench_explain.png" style="height:30.0%"></p>
 <p><a href="https://arxiv.org/pdf/2403.07974" target="_blank"> LiveCodeBench: https://arxiv.org/pdf/2403.07974 </a></p>
+<aside class="notes">
+<p>Explain what is a leaderboard: you have the inputs and the outputs and you evaluate the results to asses the performance of the model.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="learderboards-1" class="slide level2">
 <h2>Learderboards</h2>
@@ -245,7 +286,21 @@ Loïc Gouarin
 <section id="learderboards-2" class="slide level2 text-center">
 <h2>Learderboards</h2>
 
-<img data-src="figures/new_livecodebench.png" class="r-stretch"></section>
+<img data-src="figures/new_livecodebench.png" class="r-stretch"><aside class="notes">
+<p>Big improvement in just 6 months.</p>
+<p>Not a lot of open models.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="how-to-use-them" class="slide level2">
 <h2>How to use them ?</h2>
 <div class="lh-lg center-page-vertically">
@@ -258,8 +313,8 @@ Loïc Gouarin
 </ul>
 </div>
 </section>
-<section id="what-are-the-limitations-of-this-approach" class="slide level2">
-<h2>What are the limitations of this approach ?</h2>
+<section id="what-are-the-limitations" class="slide level2">
+<h2>What are the limitations ?</h2>
 <div class="lh-lg center-page-vertically">
 <ul>
 <li>The model doesn’t know anything about your domain.</li>
@@ -272,7 +327,20 @@ Loïc Gouarin
 <section id="what-do-we-want-to-achieve" class="slide level2">
 <h2>What do we want to achieve ?</h2>
 
-<img data-src="figures/wanted.svg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<img data-src="figures/wanted.svg" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>perceive reasoning act remember</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section>
 <section id="how-enrich-a-generic-llm-model" class="title-slide slide level1 center">
 <h1>How enrich a generic LLM model ?</h1>
@@ -281,11 +349,27 @@ Loïc Gouarin
 <section id="section-1" class="slide level2 center no-title text-center">
 <h2></h2>
 
-<img data-src="figures/fine-tuning.svg" style="width:60.0%" class="r-stretch"></section>
+<img data-src="figures/fine-tuning.svg" style="width:60.0%" class="r-stretch"><aside class="notes">
+<p>need a good preparation of the date: input and output creation</p>
+<p>need a lot of computational units to train the model</p>
+<p>The process must be redo for any update.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
 <section id="section-2" class="slide level2 center no-title text-center">
 <h2></h2>
 
 <img data-src="figures/RAG.svg" style="width:70.0%" class="r-stretch"><aside class="notes">
+<p>Easy to do but time consuming at each query.</p>
 <p>The problem with RAG is that you only have a chunk of the relevant data. You can take the neighbors if you have stored the data using an ID but it can still be not enough. CAG seems to eliminate retrieval latency or mitigate retrieval errors.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -362,19 +446,6 @@ Loïc Gouarin
 <p>The commonly accepted range is <strong>10</strong> to <strong>50</strong> tokens per second per user,</p>
 <p>but this is highly dependent on usage.</p>
 </div>
-<aside class="notes">
-<p>https://infohub.delltechnologies.com/fr-fr/p/benchmarking-nvidia-gpu-throughput-for-llms-and-understanding-gpu-configuration-choices-in-the-ai-space/</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
 </section>
 <section id="computational-resources-1" class="slide level2">
 <h2>Computational resources</h2>
@@ -513,7 +584,7 @@ Loïc Gouarin
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
